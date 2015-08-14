@@ -1,23 +1,15 @@
 package university;
 
+import java.util.Scanner;
+
 /**
  * Created by admin on 14.08.15.
  */
 public  class Group {
-    private int groupNumber;
-    private Student [] students;
+    private Student [] students = new Student [12];
 
-    public Group(Student[] students, int groupNumber) {
+    public Group(Student[] students) {
         this.students = students;
-        this.groupNumber = groupNumber;
-    }
-
-    public int getGroupNumber() {
-        return groupNumber;
-    }
-
-    public void setGroupNumber(int groupNumber) {
-        this.groupNumber = groupNumber;
     }
 
     public Student[] getStudents() {
@@ -26,5 +18,15 @@ public  class Group {
 
     public void setStudents(Student[] students) {
         this.students = students;
+    }
+    public String findStudentBySurname (){
+        Scanner scanner = new Scanner(System.in);
+        String temp = scanner.next();
+        String result = null;
+        for (Student student : students){
+            if (student.getSurname().equals(temp))
+                result = student.getInfo();
+        }
+        return result;
     }
 }
