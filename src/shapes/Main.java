@@ -1,8 +1,6 @@
-package lesson_1;
+package shapes;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Main {
 

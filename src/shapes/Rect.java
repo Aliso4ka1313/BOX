@@ -1,4 +1,4 @@
-package lesson_1;
+package shapes;
 
 public class Rect extends Shape {
     public int test = 55;

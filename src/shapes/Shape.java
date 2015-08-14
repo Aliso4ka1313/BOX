@@ -1,4 +1,4 @@
-package lesson_1;
+package shapes;
 
 /**
  * Created by Администратор on 08.08.2015.
