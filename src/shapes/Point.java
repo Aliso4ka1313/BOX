@@ -1,6 +1,6 @@
 package shapes;
 
-public class Point {
+public class Point implements Cloneable{
 
     private int x;
     private int y;
@@ -31,15 +31,25 @@ public class Point {
                 '}';
     }
 
-    public static Point parse(String s) {
-        String[] parse1 = s.split(":")[1].split(",");
-        int px = Integer.parseInt(parse1[0].substring(1));
-        int py = Integer.parseInt(parse1[1].substring(0, parse1[1].length() - 1));
-        return new Point(px, py);
+    public static Point parse(String str) throws MyException{
+        String[] s = str.split(",");
+        int px = 0;
+        int py = 0;
+        try {
+            px = Integer.parseInt(s[0].substring(1));
+            py = Integer.parseInt(s[1].substring(0, s[1].length() - 1));
+        }catch (Exception e){
+            throw new MyException("My Error!!!");
+        }
+            return new Point(px, py);
     }
 
     /*@Override
     protected void finalize() {
         System.out.println("Help me!!!");
     }*/
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
