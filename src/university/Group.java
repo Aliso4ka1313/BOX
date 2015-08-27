@@ -19,14 +19,5 @@ public  class Group {
     public void setStudents(Student[] students) {
         this.students = students;
     }
-    public String findStudentBySurname (){
-        Scanner scanner = new Scanner(System.in);
-        String temp = scanner.next();
-        String result = null;
-        for (Student student : students){
-            if (student.getSurname().equals(temp))
-                result = student.getInfo();
-        }
-        return result;
-    }
+
 }

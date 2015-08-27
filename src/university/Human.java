@@ -1,18 +1,22 @@
 package university;
 
+import org.joda.time.DateTime;
+
+import java.util.Date;
+
 /**
  * Created by admin on 14.08.15.
  */
 public abstract class Human {
     private String name;
     private String surname;
-    private int age;
+    private DateTime birthdate;
     private String sex;
 
-    public Human(String name, String surname, int age, String sex) {
+    public Human(String name, String surname, DateTime birthdate, String sex) {
         this.name = name;
         this.surname = surname;
-        this.age = age;
+        this.birthdate = birthdate;
         this.sex = sex;
     }
 
@@ -32,12 +36,12 @@ public abstract class Human {
         this.surname = surname;
     }
 
-    public int getAge() {
-        return age;
+    public DateTime getBithdate() {
+        return birthdate;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setBithdate(DateTime birthdate) {
+        this.birthdate = birthdate;
     }
 
     public String getSex() {
