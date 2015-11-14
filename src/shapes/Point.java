@@ -52,4 +52,28 @@ public class Point implements Cloneable{
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+    @Override
+    public boolean equals (Object o){
+        if (this == o)
+            return true;
+        if (this == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        Point point = (Point)o;
+        if (x != point.x)
+            return false;
+        if (y != point.y)
+            return false;
+        return true;
+    }
+    @Override
+    public int hashCode(){
+        int prime = 31;
+        int result = 1;
+        result = prime * result + x;
+        result = prime * result + y;
+        return result;
+    }
+
 }

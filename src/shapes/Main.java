@@ -6,6 +6,14 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) throws ParseException, CloneNotSupportedException {
+		Point pt1 = new Point(10,20);
+		Point pt2 = new Point(10,20);
+		Point pt3 = new Point(44,32);
+		System.out.println(pt1.hashCode());
+		System.out.println(pt2.hashCode());
+		System.out.println(pt3.hashCode());
+
+		System.out.println(pt1.equals(pt3));
 
 		/*Date dt1 = new Date();
 		
@@ -57,6 +65,7 @@ public class Main {
 			System.out.println("Error!!!");
 		}
     }
+
 
 
 }

@@ -1,7 +1,9 @@
 package shapes;
 
-public class Rect extends Shape implements Comparable,Cloneable {
-    public int test = 55;
+import java.io.Serializable;
+
+public class Rect extends Shape implements Comparable,Cloneable, Serializable {
+   // public int test = 55;
 
     public Rect(String color, Point p1, Point p2) {
         super(color);
@@ -64,5 +66,31 @@ public class Rect extends Shape implements Comparable,Cloneable {
         Rect r = (Rect) super.clone();
         //r.pt[0] = this.pt[0].clone();// sozdat' clone tochki u Rectangle, polnoe klonirovanie
         return r;
+    }
+    @Override
+    public int hashCode(){
+        int prime = 31;
+        int result = 1;
+        result = prime * result + pt[0].hashCode();
+        result = prime * result + pt[1].hashCode();
+        result = prime * result + color.hashCode();
+        return result;
+    }
+    @Override
+    public boolean equals (Object o){
+        if (this == o)
+            return true;
+        if (o == null)
+            return false;
+        if (getClass() != o.getClass())
+            return false;
+        Rect rect = (Rect) o;
+        if( pt[0] != rect.pt[0] )
+            return false;
+        if( pt[1] != rect.pt[0] )
+            return false;
+        if (! color.equals(rect.color))
+            return false;
+        return true;
     }
 }
